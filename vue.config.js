@@ -9,6 +9,8 @@ module.exports = {
       '/foo': {
         target: '<other_url>'
       }
-    }
+    },
+    hot: true,
+    clientLogLevel: 'warning'
   }
-}
+};

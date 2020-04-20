@@ -9,8 +9,8 @@ export default {
   name: 'index',
   data () {
     return {
-
-    }
+      a: 1
+    };
   },
   components: {},
   watch: {},
@@ -18,8 +18,12 @@ export default {
     initData () { }
   },
   mounted () { },
-  created () { }
-}
+  created () {
+    if (this.a === 2) {
+      console.log(1);
+    }
+  }
+};
 </script>
 <style lang="scss" scoped>
 </style>

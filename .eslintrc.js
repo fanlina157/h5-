@@ -1,7 +1,8 @@
 module.exports = {
   root: true,
   env: {
-    node: true
+    node: true,
+    "browser": true,
   },
   extends: [
     'plugin:vue/essential',
@@ -11,8 +12,10 @@ module.exports = {
     parser: 'babel-eslint'
   },
   rules: {
+    // 配置分号
+    'semi': ['error', 'always'],
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
   },
   overrides: [
     {
