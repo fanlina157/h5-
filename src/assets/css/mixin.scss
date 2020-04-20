@@ -1,0 +1,65 @@
+// mixin
+// 清除浮动
+// @mixin clearfix {
+//   &:after {
+//     content: "";
+//     display: table;
+//     clear: both;
+//   }
+// }
+
+@mixin clearfix {
+  display: inline-block;
+  &:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+  * html & { height: 1px }
+}
+ 
+// 多行隐藏
+@mixin textoverflow($clamp:1) {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $clamp;
+  /*! autoprefixer: ignore next */
+  -webkit-box-orient: vertical;
+}
+
+//flex box
+@mixin flexbox($jc:space-between, $ai:center, $fd:row, $fw:nowrap) {
+  display: flex;
+  display: -webkit-flex;
+  flex: 1;
+  justify-content: $jc;
+  -webkit-justify-content: $jc;
+  align-items: $ai;
+  -webkit-align-items: $ai;
+  flex-direction: $fd;
+  -webkit-flex-direction: $fd;
+  flex-wrap: $fw;
+  -webkit-flex-wrap: $fw;
+}
+
+
+// demo  为便于书写，@mixin 可以用 = 表示，而 @include 可以用 + 表示
+@mixin large-text {
+  font: {
+    family: Arial;
+    size: 20px;
+    weight: bold;
+  }
+  color: #ff0000;
+}
+
+.page-title {
+  @include large-text;
+  padding: 4px;
+  margin-top: 10px;
+}
