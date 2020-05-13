@@ -5,25 +5,21 @@
   </div>
 </template>
 <script>
+
+import { mapGetters } from 'vuex';
 export default {
-  name: 'index',
-  data () {
-    return {
-      a: 1
-    };
+  computed: {
+    ...mapGetters(['userName'])
   },
-  components: {},
-  watch: {},
+
   methods: {
-    initData () { }
-  },
-  mounted () { },
-  created () {
-    if (this.a === 2) {
-      console.log(1);
+    // Action 通过 store.dispatch 方法触发
+    doDispatch () {
+      this.$store.dispatch('setUserName', '真乖，赶紧关注公众号，组织都在等你~');
     }
   }
 };
+
 </script>
 <style lang="scss" scoped>
 </style>
